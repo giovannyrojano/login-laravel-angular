@@ -1,1 +1,41 @@
-/* You can add global styles to this file, and also import other style files */
+
+
+
+@font-face{
+    font-family: 'Roboto_light';
+    src: url('./assets/fonts/Roboto/Roboto-Light.ttf');
+  }
+
+  @font-face{
+    font-family: 'Roboto_regular';
+    src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+  }
+  @font-face{
+    font-family: 'Roboto_medium';
+    src: url('./assets/fonts/Roboto/Roboto-Medium.ttf');
+  }
+  @font-face{
+    font-family: 'Roboto_bold';
+    src: url('./assets/fonts/Roboto/Roboto-Bold.ttf');
+  }
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+  html, body { height: 100%; width: 100%; }
+  body { margin: 0; font-family: 'Roboto_regular'; overflow-x: hidden; }
+
+  :root{
+
+
+    --Roboto_light:'Roboto_light';
+    --Roboto_regular:'Roboto_regular';
+    --Roboto_medium:'Roboto_medium';
+    --Roboto_bold:'Roboto_bold';
+    --gris:#dae1f0;
+
+    --logo:url("./assets/menu/icons8-alpha-100.png");
+    
+/*imgs registro*/
+    --registrar: url("./assets/registrar/undraw_profile_image_re_ic2f.svg");
+    --perfil: url("./assets/registrar/undraw_profile_pic_ic5t.svg");
+
+  }

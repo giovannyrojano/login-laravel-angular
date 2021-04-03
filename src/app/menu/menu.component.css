@@ -1,0 +1,32 @@
+nav{
+    height: 9%;
+}
+.text-inline{
+
+    margin-left: 80%;
+}
+
+.logo-a{
+    background-image: var(--logo);
+    width:30px;
+     height:30px;
+     background-size: cover;
+}
+.nav-link{
+    cursor: pointer;
+}
+.navbar-collapse.collapse.show  {
+    background: gray; /* older browsers */
+    background: rgba(128,128,128,1); /* newer browsers */
+    visibility: visible;
+
+}
+@media screen and (max-width:768px) {
+    nav{
+        width: 100%;
+    }
+    .text-inline{
+
+        margin-left: 0;
+    }
+}

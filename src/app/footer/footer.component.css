@@ -1,0 +1,15 @@
+footer{
+    height: 20%;
+    background: linear-gradient(-135deg,#5088c8, #636b91);
+    text-align:  center;
+}
+.text-footer{
+
+
+}
+
+p{
+padding-top: 3%;
+    font-family: var(--Roboto_regular);
+ color: white;
+}

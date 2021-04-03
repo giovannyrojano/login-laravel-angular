@@ -1,0 +1,15 @@
+.container-fluid{
+    min-height: 71%;
+    background-color: var(--gris);
+}
+
+.table-users{
+    overflow-x: auto;
+}
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    position: relative;
+    width: 100%;
+    font-size: 1.5vw;
+}
