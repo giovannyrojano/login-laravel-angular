@@ -1,15 +1,16 @@
 
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-
+@font-face{
+  font-family: 'Roboto_regular';
+  src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
+}
 @font-face{
     font-family: 'Roboto_light';
     src: url('./assets/fonts/Roboto/Roboto-Light.ttf');
   }
 
-  @font-face{
-    font-family: 'Roboto_regular';
-    src: url('./assets/fonts/Roboto/Roboto-Regular.ttf');
-  }
+ 
   @font-face{
     font-family: 'Roboto_medium';
     src: url('./assets/fonts/Roboto/Roboto-Medium.ttf');
@@ -24,18 +25,36 @@
   body { margin: 0; font-family: 'Roboto_regular'; overflow-x: hidden; }
 
   :root{
-
-
     --Roboto_light:'Roboto_light';
     --Roboto_regular:'Roboto_regular';
     --Roboto_medium:'Roboto_medium';
     --Roboto_bold:'Roboto_bold';
     --gris:#dae1f0;
+    --azul:#5088c8;
 
     --logo:url("./assets/menu/icons8-alpha-100.png");
-    
+
+
+    --slider1:url("./assets/home/undraw_happy_announcement_ac67.svg");
+    --slider2:url("./assets/home/undraw_tutorial_video_vtd1.svg");
+    --slider3:url("./assets/home/undraw_Select_option_re_u4qn.svg");
 /*imgs registro*/
     --registrar: url("./assets/registrar/undraw_profile_image_re_ic2f.svg");
     --perfil: url("./assets/registrar/undraw_profile_pic_ic5t.svg");
 
   }
+
+  body::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,71 @@
+<nav class="nav-menu-m">
+    <ul class="ul-nav">
+        <li class="li-menu-mobile"><button mat-icon-button (click)="showMenu()"><mat-icon>menu</mat-icon></button></li>
+        <li class="li-logo"> <div class="logo" [routerLink]="['/home']" routerLinkActive="router-link-active"></div> <!--<img class="logo" [routerLink]="['/home']" routerLinkActive="router-link-active"  src="../../assets/home/logo.png" alt="logo">--></li>
+        <li class="li-language">
+
+        </li>
+    </ul>    
+</nav>
+
+<nav id="navMobile" class="content-menu-mobile" (click)="hideMenu($event)" [ngClass]="{'nav-visible':sidenav }">
+    <ul class="ul-side" [@slideLeft]=currentState>
+        <li class="li-logo"><div class="logo-side" [routerLink]="['/home']" (click)="hideMenuNav()"></div></li>
+        <div class="d-options-menu">
+            <li><button class="bt-menu-side" mat-button [routerLink]="['/home']" routerLinkActive="active-list-item" (click)="hideMenuNav()">home</button></li>
+            <li><button class="bt-menu-side" mat-button  routerLinkActive="active-list-item" (click)="hideMenuNav()">nosotros</button></li>
+            <li>
+                <mat-accordion>
+                    <mat-expansion-panel class="m-panel" mat-button>
+                    <mat-expansion-panel-header class="m-panel-h">
+                        <mat-panel-title>
+                           productos
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                        <button class="bt-sub-menu-side" mat-button [routerLink]="['/jforms']" routerLinkActive="active-list-item" (click)="hideMenuNav()">jfors</button>
+                        <button class="bt-sub-menu-side" mat-button [routerLink]="['/jreports']" routerLinkActive="active-list-item" (click)="hideMenuNav()">jreport</button>
+<!--                         <button class="bt-sub-menu-side" mat-button [routerLink]="['/jformsruntime']" routerLinkActive="active-list-item" (click)="hideMenuNav()">{{"MENU.jformRuntime" | translate}}</button>
+ -->                        <button class="bt-sub-menu-side" mat-button [routerLink]="['/jmigrator']" routerLinkActive="active-list-item" (click)="hideMenuNav()">migracion</button>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </li>
+            <li>
+                <mat-accordion>
+                    <mat-expansion-panel class="m-panel" mat-button>
+                    <mat-expansion-panel-header class="m-panel-h">
+                        <mat-panel-title>
+                        servicios
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                        <button class="bt-sub-menu-side" mat-button [routerLink]="['/erp']" routerLinkActive="active-list-item" (click)="hideMenuNav()">erp</button>
+                        <button class="bt-sub-menu-side" mat-button [routerLink]="['/software']" routerLinkActive="active-list-item" (click)="hideMenuNav()">desarrollo</button>
+ 
+                        <!--                       <button class="bt-sub-menu-side" mat-button [routerLink]="['/wisesophia']" routerLinkActive="router-link-active">{{"MENU.wisesophia" | translate}}</button>-->
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </li>
+            <li><button class="bt-menu-side" mat-button [routerLink]="['/contact']" routerLinkActive="active-list-item" (click)="hideMenuNav()">contacto</button></li>
+        </div>
+        <div class="d-footer-menu">
+            <div class="d-title-footer-menu">
+                <div>
+                 foorter
+                </div>
+            </div>
+
+            <div class="d-footer-icons">
+                <div class="d-icon-menu" [routerLink]="['/contact']" fragment="map-asp" (click)="hideMenuNav()">
+                    <mat-icon class="icon">room</mat-icon>
+                </div>
+                <a href="tel:{{celphone}}">
+                    <div class="d-icon-menu" (click)="hideMenuNav()">
+                        <mat-icon class="icon">phone_iphone</mat-icon>
+                    </div>
+                </a>
+                <div class="d-icon-menu" [routerLink]="['/contact']" (click)="hideMenuNav()">
+                    <mat-icon class="icon">email</mat-icon>
+                </div>
+            </div>
+        </div>
+    </ul>
+</nav>

@@ -1,23 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { Router,NavigationStart} from '@angular/router';
 import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 
 
 import {APIService} from '../services/api.service';
+import { GlobalsService } from '../globals-variables';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent implements OnInit ,OnChanges, OnDestroy{
 
   datos = {
         email : "",
         password:""
       };
 
-  constructor(private fb : FormBuilder,private router: Router, private _services:APIService) { }
+  constructor(private fb : FormBuilder,private router: Router, private _services:APIService,public globals :GlobalsService) { }
 
 
   LoginForm = this.fb.group({
@@ -27,13 +28,25 @@ export class LoginComponent implements OnInit {
  });
   ngOnInit(): void {
 
-
   }
+
+  ngOnChanges(): void {
+
+    this.globals.token;
+    this.globals.nombre;
+  }
+  ngOnDestroy(): void {
+
+    this.globals.token;
+    this.globals.nombre;
+  }
+
 
   Login(params){  
     this._services.Login(params).subscribe(
       (response:any)=>{
         this._services.setToken(response.token,response.name);
+        this.globals.isUserLoggedIn.next(true);
         this.router.navigate(['/home']);
       },
       err=>{

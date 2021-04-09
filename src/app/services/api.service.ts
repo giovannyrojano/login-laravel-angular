@@ -38,6 +38,18 @@ export class APIService {
     return this.http.post("https://tranquil-garden-35428.herokuapp.com/api/registrar",params,{headers:headers});
   }
 
+  getUser(token,id){
+    return this.http.get("https://tranquil-garden-35428.herokuapp.com/api/user/"+id,{headers:{'Authorization': 'Bearer '+token}});
+  }
+
+  delete(params:any,token:any){
+
+    return this.http.delete("https://tranquil-garden-35428.herokuapp.com/api/delete/"+params,{headers:{'Authorization': 'Bearer '+token}});
+  }
+  update(params:any,token:any,id:any){
+    return this.http.post("https://tranquil-garden-35428.herokuapp.com/api/update/"+id,params,{headers:{'Authorization': 'Bearer '+token}});
+  }
+
   setToken(token:any,name:any) {
     this.cookies.set("token",token);
     this.cookies.set("token_name",name);

@@ -7,32 +7,12 @@ import { APIService } from '../services/api.service';
   templateUrl: './menu.component.html',
   styleUrls: ['./menu.component.css']
 })
-export class MenuComponent implements OnInit,OnChanges {
-  public token:any;
-  public name:any;
+export class MenuComponent implements OnInit{
+
   
-  constructor(private _services:APIService,private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
-  this.token=this._services.getToken();
-  this.name=this._services.getName();
-  }
-  ngOnChanges(): void {
- console.log(this.token,this.name);
-  }
-
-  logOut(){
-    this._services.LogOut(this.token)
-    .subscribe(
-      response=>{
-        console.log(response);
-        this._services.deleteToken();
-        this.router.navigate(['/login']);
-
-      },
-      err=>{
-        alert('error no pudo cerrar sesion correctamente');
-      }
-    );
+ 
   }
 }

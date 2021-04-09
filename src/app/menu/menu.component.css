@@ -1,32 +1,31 @@
-nav{
-    height: 9%;
-}
-.text-inline{
-
-    margin-left: 80%;
+.m-t-header{
+  height: 80px;
+  background-color: var(--blanco);
 }
 
-.logo-a{
-    background-image: var(--logo);
-    width:30px;
-     height:30px;
-     background-size: cover;
+.m-t-r-header{
+  height: var(--full);
 }
-.nav-link{
-    cursor: pointer;
-}
-.navbar-collapse.collapse.show  {
-    background: gray; /* older browsers */
-    background: rgba(128,128,128,1); /* newer browsers */
-    visibility: visible;
 
-}
-@media screen and (max-width:768px) {
-    nav{
-        width: 100%;
+  .menu-desk{
+    display:block;
+    width: 100%;
+    height: auto;
+  }
+  
+  .menu-mobile{
+    display: none;
+  }
+  
+  /*For smartphone*/
+  @media screen and (max-width: 768px) {
+    
+    .menu-desk{
+      display: none;
     }
-    .text-inline{
-
-        margin-left: 0;
+    
+    .menu-mobile{
+      display: block;
+      position: relative !important;
     }
-}
+  }

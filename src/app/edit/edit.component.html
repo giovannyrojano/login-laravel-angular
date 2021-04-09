@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="container">
+		<div class="img image-register">
+		
+		</div>
+		<div class="login-content">
+
+
+			<form  #updateForm="ngForm" (ngSubmit)="update(updateForm.value)" >
+			<div class="image-perfil"></div>
+				<h2 class="title">Registrate</h2>
+                <div class="input-div one">
+        <div class="i">
+                <i class="fas fa-user"></i>
+        </div>
+        <div class="div">
+                <h5>Nombre</h5>
+                <input type="text" class="input" [(ngModel)]="user.name" name="name" required>
+        </div>
+
+</div>
+        <div class="input-div one">
+                <div class="i">
+                        <i class="fas fa-user"></i>
+                </div>
+                <div class="div">
+                        <h5>email</h5>
+                        <input type="email" class="input" [(ngModel)]="user.email" name="email" required>
+                </div>
+             </div>
+
+    
+             <input type="submit" class="btn" value="Actualizar">
+            </form>
+</div>
+
+
+</div>
+</div>
+
