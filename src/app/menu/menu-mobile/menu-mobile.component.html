@@ -50,9 +50,10 @@
                     </mat-expansion-panel>
                 </mat-accordion>
             </li>
-  -->
-            <li><button class="bt-menu-side" mat-button [routerLink]="['/contact']" routerLinkActive="active-list-item" (click)="hideMenuNav()">contacto</button></li>
+  -->   <li><button class="bt-menu-side" mat-button [routerLink]="['/listar']" routerLinkActive="active-list-item" (click)="hideMenuNav()">Listar usuarios</button></li>
        
+            <li><button class="bt-menu-side" mat-button [routerLink]="['/contact']" routerLinkActive="active-list-item" (click)="hideMenuNav()">contacto</button></li>
+         
            <li *ngIf="getprue()">
                 <mat-accordion>
                     <mat-expansion-panel class="m-panel" mat-button>
