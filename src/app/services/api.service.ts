@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, ObservableInput } from 'rxjs';
 import { CookieService } from "ngx-cookie-service";
 
 import{ AppComponent}from '../app.component';
@@ -15,7 +15,7 @@ export class APIService {
 
   constructor(private http : HttpClient, private cookies:CookieService ) { }
 
-  Login(params){
+  Login(params):Observable<any>{
     let headers=new HttpHeaders().set('Content-Type','application/json');
     return this.http.post("https://tranquil-garden-35428.herokuapp.com/api/login",params,{headers:headers});
   }
@@ -50,7 +50,7 @@ export class APIService {
     return this.http.post("https://tranquil-garden-35428.herokuapp.com/api/update/"+id,params,{headers:{'Authorization': 'Bearer '+token}});
   }
 
-  setToken(token:any,name:any) {
+ /* setToken(token:any,name:any) {
     this.cookies.set("token",token);
     this.cookies.set("token_name",name);
   }
@@ -68,5 +68,7 @@ export class APIService {
     this.cookies.delete("token");
     this.cookies.delete("token_name");
   }
+
+*/
 
 }

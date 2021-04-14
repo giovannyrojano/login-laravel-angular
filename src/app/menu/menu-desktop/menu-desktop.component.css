@@ -2,7 +2,7 @@ nav{
     height: 9%;
 }
 .text-inline{
-    margin-left: 80%;
+    margin-left: 45%;
 }
 
 .logo-a{
@@ -13,9 +13,103 @@ nav{
 }
 .nav-link{
     cursor: pointer;
+    min-width: 110px !important;
 }
 .navbar-collapse.collapse.show  {
     background: gray; /* older browsers */
     background: rgba(128,128,128,1); /* newer browsers */
     visibility: visible;
+}
+
+.nav-item{
+    margin: 0 40px;
+    z-index: 3;
+
+    font-family: var(--Roboto_bold);
+    transition: all .5s ease;
+    border-radius: 15px;
+}
+
+.nav-item:hover{
+    background-color: var(--azul);
+}
+.nav-item:hover >.nav-link{
+    color: #ffffff !important;
+}
+
+.fas.fa-angle-right,.fas.fa-angle-left {
+    display: none !important;
+    color: #3d11a9 !important;
+
+}
+
+.fas.fa-angle-right::before {
+    animation: cicle-r 2s ease infinite;
+}
+
+.fas.fa-angle-left::before {
+    animation: cicle-l 2s ease infinite;
+}
+
+
+@keyframes cicle-r {
+    0%   { padding-left: 0%;}
+    25%   { padding-left: 20%;}
+
+    50%   { padding-left: 0%;}
+    75%   { padding-left: 20%;}
+    100% {padding-left: 0%;}
+  }
+
+
+@keyframes cicle-l {
+    0%   { padding-left: 30%;}
+    25%   { padding-left: 0%;}
+    50%   { padding-left: 30%;}
+    75%   { padding-left: 0%;}
+    100% {padding-left: 30%;}
+  }
+
+.nav-item:hover >.nav-link > .fas{
+    display: inline-table !important;
+}
+
+
+.nav-link {
+    transition: cubic-bezier() .5s ease;
+}
+.active{
+    background-color: var(--azul);
+}
+.active .nav-link{
+    color: white !important;
+}
+
+.slide1,
+.slide2 {
+    position: absolute;
+    display: inline-block;
+    transition: all 0.9s cubic-bezier(0.23, 1, 0.32, 1.05);
+    height: 60%;
+    border-radius: 15px;
+}
+.slide1::before {
+    background-color: #eeeeee30;
+    z-index: 2;
+    opacity: 0;
+}
+
+.slide1{
+    background-color: var(--azul);
+    z-index: 2;
+}
+.slide2 {
+    opacity: 0;
+    background-color: #5088c8;
+    border: 1px solid #eeeeee70;
+    z-index: 1;
+    color: white !important;
+}
+::ng-deep .customize {
+    background: #f8f9fa !important;
 }

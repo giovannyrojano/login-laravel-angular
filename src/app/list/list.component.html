@@ -1,0 +1,67 @@
+
+<div class="container-fluid">
+
+<h2 class="text-center"> Lista de usuarios</h2>
+<div *ngIf="!users else display" >
+<div class="spinner"></div>
+
+ </div>
+
+  <ng-template #display>
+    <div class="table-users">
+    <table mat-table [dataSource]="users" class="mat-elevation-z8 table table-hover">
+
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="#">
+        <th mat-header-cell *matHeaderCellDef> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
+    
+       <!-- Weight Column -->
+       <ng-container matColumnDef="correo">
+        <th mat-header-cell *matHeaderCellDef> correo </th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="created_at">
+        <th mat-header-cell *matHeaderCellDef> creado el </th>
+        <td mat-cell *matCellDef="let element"> {{element.created_at| date:'yyyy-MM-dd HH:mm a z'}} </td>
+      </ng-container>
+    
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="updated_at">
+        <th mat-header-cell *matHeaderCellDef> ultima actualizacion </th>
+        <td mat-cell *matCellDef="let element"> {{element.updated_at| date:'yyyy-MM-dd HH:mm a z'}} </td>
+      </ng-container>
+      <ng-container matColumnDef="accion">
+        <th mat-header-cell *matHeaderCellDef> accion </th>
+        <td mat-cell *matCellDef="let element"> 
+       <div class="row">
+         <div class="btn-accion">
+           <button mat-mini-fab  color="warn"  (click)="delete(element.id);"  [disabled]="log"> <i class="fas fa-trash"></i></button>
+         </div>
+         <div class="btn-accion">
+          <button mat-mini-fab  color="primary" [routerLink]="['/edit', element.id]" [disabled]="log" > <i class="fas fa-user-edit"></i></button>
+        </div>
+       </div>
+    
+      </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    </div>
+    </ng-template>
+
+</div>

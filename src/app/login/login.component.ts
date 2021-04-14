@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 
 
 import {APIService} from '../services/api.service';
-import { GlobalsService } from '../globals-variables';
+import { DataSharingService } from '../globals-variables';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit ,OnChanges, OnDestroy{
         password:""
       };
 
-  constructor(private fb : FormBuilder,private router: Router, private _services:APIService,public globals :GlobalsService) { }
+  constructor(private fb : FormBuilder,private router: Router, private _services:APIService,private dataSharingService: DataSharingService) { }
 
 
   LoginForm = this.fb.group({
@@ -32,22 +32,23 @@ export class LoginComponent implements OnInit ,OnChanges, OnDestroy{
 
   ngOnChanges(): void {
 
-    this.globals.token;
-    this.globals.nombre;
+
   }
   ngOnDestroy(): void {
 
-    this.globals.token;
-    this.globals.nombre;
+
   }
 
 
   Login(params){  
     this._services.Login(params).subscribe(
       (response:any)=>{
-        this._services.setToken(response.token,response.name);
-        this.globals.isUserLoggedIn.next(true);
+        this.dataSharingService.setToken(response.token,response.name);
+
+
         this.router.navigate(['/home']);
+      
+
       },
       err=>{
         console.log(err);

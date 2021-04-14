@@ -26,7 +26,7 @@
 <div class="field">
         <input type="submit" [disabled]="LoginForm.invalid" value="Iniciar">
       </div>
-<div class="signup-link">Aun no tienes cuenta?<a href="#">Registrate</a></div>
+<div class="signup-link">Aun no tienes cuenta?<a [routerLink]="['/registrar']" >Registrate</a></div>
 </form>
 
 </div>

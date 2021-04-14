@@ -34,13 +34,18 @@
 
     --logo:url("./assets/menu/icons8-alpha-100.png");
 
-
+/*Imgs HOme*/
     --slider1:url("./assets/home/undraw_happy_announcement_ac67.svg");
-    --slider2:url("./assets/home/undraw_tutorial_video_vtd1.svg");
+    --slider2:url("./assets/home/undraw_Sign_in_re_o58h.svg");
     --slider3:url("./assets/home/undraw_Select_option_re_u4qn.svg");
+
+
 /*imgs registro*/
     --registrar: url("./assets/registrar/undraw_profile_image_re_ic2f.svg");
     --perfil: url("./assets/registrar/undraw_profile_pic_ic5t.svg");
+
+    /*Imgs editar*/
+    --edit-lef:url("./assets/editar/undraw_profile_details_f8b7.svg");
 
   }
 
@@ -58,3 +63,17 @@
   
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+h1,h2,h3,h4{
+  font-family: var(--Roboto_medium);
+  font-weight: 600;
+}
+
+a{
+  font-family: var(--Roboto_bold);
+  font-weight: 700;
+}
+
+p{
+  font-family: var(--Roboto_regular);
+}

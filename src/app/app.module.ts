@@ -10,6 +10,8 @@ import{MatIconModule} from'@angular/material/icon';
 import{MatButtonModule} from'@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 
+import{MatMenuModule}from '@angular/material/menu'; 
+
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 
@@ -23,8 +25,9 @@ import { RegistrarComponent } from './registrar/registrar.component';
 import { MenuMobileComponent } from './menu/menu-mobile/menu-mobile.component';
 import { MenuDesktopComponent } from './menu/menu-desktop/menu-desktop.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GlobalsService } from './globals-variables';
+import { DataSharingService } from './globals-variables';
 import { EditComponent } from './edit/edit.component';
+import { ListComponent } from './list/list.component';
 
 
 
@@ -39,7 +42,8 @@ import { EditComponent } from './edit/edit.component';
     RegistrarComponent,
     MenuMobileComponent,
     MenuDesktopComponent,
-    EditComponent
+    EditComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
@@ -50,10 +54,11 @@ import { EditComponent } from './edit/edit.component';
     MatIconModule,
     MatButtonModule,
     MatTableModule,
+    MatMenuModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [GlobalsService],
+  providers: [DataSharingService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

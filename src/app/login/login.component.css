@@ -1,12 +1,8 @@
 .container-fluid{
     min-height: 71%;
     background-color: var(--gris);
+    padding: 2% 0px;
 }
-
-
-
-
-
 *{
   margin: 0;
   padding: 0;
@@ -27,7 +23,7 @@ html,body{
 }
 .wrapper{
     margin: 0% auto;
-  width: 380px;
+  width: 27.818vw  ;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
@@ -158,4 +154,17 @@ form .signup-link a{
 form .pass-link a:hover,
 form .signup-link a:hover{
   text-decoration: underline;
+}
+
+@media screen and (max-width: 768px){
+ 
+  
+  .wrapper{
+    width: 100%;
+  }  
+ .title{
+    border-radius: 0px !important;
+
+  }
+ 
 }

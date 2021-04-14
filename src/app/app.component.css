@@ -1,0 +1,5 @@
+.btn:disabled{
+	cursor: not-allowed;
+	pointer-events: all !important;
+	background-image:  linear-gradient(-135deg,#b2b6b9, #cccbcb);
+}

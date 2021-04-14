@@ -6,7 +6,7 @@ import {NgForm} from '@angular/forms';
 import * as $ from  'jquery';
 
 
-import { GlobalsService } from '../globals-variables';
+import { DataSharingService } from '../globals-variables';
 import { APIService } from '../services/api.service';
 import Swal from 'sweetalert2';
 
@@ -18,7 +18,7 @@ import Swal from 'sweetalert2';
 export class EditComponent implements OnInit {
  
 
-  constructor( private _Activatedroute: ActivatedRoute,private _services:APIService,public globals:GlobalsService,private fb : FormBuilder) { }
+  constructor( private _Activatedroute: ActivatedRoute,private _services:APIService,private dataSharingService: DataSharingService,private fb : FormBuilder) { }
   public id:any;
   public user:{name:'',email:''};
 
@@ -57,7 +57,7 @@ inputs.forEach(input => {
 
    this.user={name:'',email:''};
     this.id=this._Activatedroute.snapshot.paramMap.get("id");
-    this._services.getUser(this.globals.token,this.id).subscribe(
+    this._services.getUser(this.dataSharingService.token,this.id).subscribe(
       (response:any)=>{
         this.user=response.user;
     },
@@ -70,7 +70,7 @@ inputs.forEach(input => {
 
 
   update(params:NgForm){
-    this._services.update(params,this.globals.token,this.id).
+    this._services.update(params,this.dataSharingService.token,this.id).
     subscribe( 
       (response:any)=>{
         Swal.fire({

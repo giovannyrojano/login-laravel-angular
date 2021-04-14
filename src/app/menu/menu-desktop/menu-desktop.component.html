@@ -1,36 +1,69 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow" id="navbar">
     <a class="navbar-brand" href="#">
-      <div class="logo-a">
-        
+      <div class="logo-a">     
       </div>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    
+    <div class="collapse navbar-collapse text-center" id="navbarNav" >
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" [routerLink]="['/']" >inicio <span class="sr-only">(current)</span></a>
+        <li class="nav-item" routerLinkActive="active">
+               <a class="nav-link" [routerLink]="['/home']" > 
+                <i class="fas fa-angle-right"></i>
+                inicio
+                <i class="fas fa-angle-left" ></i>
+              </a>
+             
+              </li> 
+         <li class="nav-item" [routerLinkActive]="['active']" >
+          <a class="nav-link" [routerLink]="['/registrar']"  >
+            <i class="fas fa-angle-right"></i>
+            registrar 
+            <i class="fas fa-angle-left" ></i>
+          </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/login']" *ngIf="!globals.token">Login</a>
-        </li> <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/registrar']"  >registrar <span class="sr-only">(current)</span></a>
+
+        <li class="nav-item" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['/listar']"  >
+            
+            <i class="fas fa-angle-right"></i>
+            usuarios
+            <i class="fas fa-angle-left"></i>
+          
+          </a>
         </li>
   
+        <li class="slide1 "></li>
+        <li class="slide2"></li>
   
      
       </ul>
       <div class="text-inline">
         <ul class="navbar-nav">
-   <li class="nav-item">
-        <a class="nav-link" *ngIf="globals.nombre">{{globals.nombre}}</a>
+
+          <li class="nav-item" *ngIf="!getprue()" [routerLinkActive]="['active']">
+            <a class="nav-link" [routerLink]="['/login']" >
+              <i class="fas fa-angle-right"></i>
+              Login    
+              <i class="fas fa-angle-left" ></i>
+            </a>
+          </li>
+
+
+   <li class="nav-item" *ngIf="getnombre()">
+     <!--   <a class="nav-link" >{{name}}</a>-->
+
+        <button mat-button [matMenuTriggerFor]="menu">{{name}} <mat-icon>person</mat-icon></button>
+<mat-menu #menu="matMenu" xPosition="before" class="customize">
+  <button mat-menu-item (click)="logOut()" >Cerrar sesion <mat-icon>exit_to_app</mat-icon></button>
+</mat-menu>
+
+
       </li>
-  <li class="nav-item">
+  <!--<li class="nav-item">
          
-      <a class="nav-link" (click)="logOut()" *ngIf="globals.nombre">Cerrar Sesion</a>
+      <a class="nav-link" (click)="logOut()" *ngIf="getprue()">Cerrar Sesion</a>
     </li>
-        </ul>
+  -->   </ul>
       </div>
      
       </div>
